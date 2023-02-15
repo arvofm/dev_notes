@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\usepackage{parskip}
+\usepackage[a4paper]{geometry}
+\usepackage{mathtools}    % rearranges the equations display geometry
+
+\begin{document}
+    \sffamily
+
+    \section*{Quadratic Equations}
+    A quadratic equation looks like this:
+    \begin{equation}    % numbered
+        ax^2 + bx + c = 0. \label{eq:quad}
+    \end{equation}
+    where the variable x has two solutions as the discriminant root formula suggests:
+    \begin{equation}
+        \mathcal{X}_{1,2} = \frac{-b \pm \sqrt[2]{b^2 - 4ac}}{2a}. \label{eq:quadroot}
+    \end{equation}
+    If the \emph{discriminant} \(\Delta\) with \[ \Delta = b^2 - 4ac \] is zero, then
+    the equation \ref{eq:quadroot} which stems from $\Delta$ becomes \[ x = \frac{-b}{2a} \]
+    % \begin{math} ... \end{math} = \(...\) = $...$ ---------------------- inline
+    % \begin{displaymath} ... \end{displaymath} = \[...\] = $$...$$ ------ displayed
+    % \mathcal{X} or any uppercase letter is nice-looking
+    % for text within formulas use \text{...}
+
+    \section*{Weird Showcase}
+    ddots: $\ddots$
+
+    cdot: $\cdot$
+
+    cdots: $\cdots$
+
+    ldots: $\ldots$
+
+    vdots: $\vdots$
+
+    vectors: $\vec{a}+\vec b = \vec c$
+
+    newton: $F\hat{i}=m \times a\hat{i}$
+
+    \section*{Long Equations}
+    Here we begin to use the mathtools package.
+    Multiline equation:
+    \begin{multline}
+        \sum_{k=1}^n = 1^2 + 2^2 + 3^2 \\
+        4^2 + 5^2 + 6^2 + \ldots \\
+        (n-2)^2 + (n-1)^2 + n^2
+    \end{multline}
+
+    Gathered equation:
+    \begin{gather}
+        x+y+z = 0 \\
+        y - z = 1
+    \end{gather}
+
+    To manipulate and align the equations where we want,
+    \begin{align}
+        a + b + c &= 5 \\
+        b-c &= 1 \\
+        a &= 2
+    \end{align}
+    % to use unnumbered equations, use * like align*
+
+    \section*{Building Math Structures}
+    Here is an array:
+    \[
+        A =  \left( 
+            \begin{array}{cc}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22}
+            \end{array} 
+        \right)
+    \]
+
+    Here is the binomial expansion:
+    \[
+        \binom{n}{k} = \frac{n!}{k!(n-k)!}
+    \]
+
+    Now some incorrect and cultural knowledge:
+    \[
+        N=\frac{-1}{12}=\underbrace{1+2+3+4+ \ldots}_{\infty}
+    \]
+
+\end{document}

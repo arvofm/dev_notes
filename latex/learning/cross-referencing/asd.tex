@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage{parskip}
+\usepackage[demo]{graphicx}
+
+\usepackage{varioref} % introduces the functions \vref and \vpageref, smart \ref and \pageref
+\usepackage{cleveref} % introduces the functions \cref, \crefrange, \cpageref, \cpagerefrange
+% providing the type of reference
+% common practice is to load cleveref after varioref
+
+\newcommand{\fulref}[1]{\vref{#1} on page~\vpageref{#1}} % same as \fullref
+
+\begin{document}
+
+    \section{Just a White Box} \label{sec:justwhitebox}
+
+    We now begin to have discussion on cross-referencing.
+    \footnote{I don't know why we are starting with this weird white box.} \label{fn:weird}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics{test}
+        \caption{Here we have a white box} \label{fig:whitebox1}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics{test}
+        \caption{Now we have another white box} \label{fig:whitebox2}
+    \end{figure}
+
+    \begin{table}[hbp]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            Material & Density \\
+            \hline
+            Water & 1.0 \\
+            Potato & 2.47 \\
+            \hline
+        \end{tabular}
+        \caption{Table of density} \label{tab:density}
+    \end{table}
+
+    Now I can reference the second figure \ref{fig:whitebox2}, the section \ref{sec:justwhitebox},
+    footnote \ref{fn:weird}, and the table \fullref{tab:density}.
+
+    See that we can define a pretty little new command to fully automize referencing to our preferences.
+
+    % varioref offers two more commands:
+    % \vpagerefrange[opt]{ref1}{ref2}   : like "on pages 32-36", opt would be used if both labels fall onto the same page
+    % \vpageref[opt]{ref1}{ref2}        : like "4.2 to 4.4 on pages 36-37"
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}     % use UTF-8
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}            % better font tuning
+
+% helvetica:                \usepackage{helvet}
+% computer modern bright:   \usepackage{cmbright}
+% times roman:              \usepackage{mathptmx}
+% inconsolata:              \usepackage{inconsolata}
+% linux libertine:          \usepackage{libertine}
+
+\newcommand{\pangram}[1][\rmfamily]{{#1 The quick brown fox jumps
+over the lazy dog. 1234567890}\par}
+
+\begin{document}
+
+    Hello, it's fonts manipulation again. So we begin.
+
+    \pangram
+    \pangram[\sffamily]
+    \pangram[\ttfamily]
+    \pangram[\itshape]
+    \pangram[\slshape]
+
+\end{document}

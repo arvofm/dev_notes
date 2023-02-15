@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+
+\usepackage{paralist} % Compact lists, customizable labels and layout options
+\usepackage{layouts} % Does all sorts of things about layouts
+
+\begin{document}
+
+    Here we go.
+
+    \section*{Bulleted Lists}
+
+    Latex provides handful of packages for designing the layout:
+    \begin{itemize}
+        \item Page Layout
+            \begin{itemize}
+                \item geometry
+                \item typearea
+            \end{itemize}
+        \item Headers and Footers
+            \begin{itemize}
+                \item fancyhdr
+                \item scrpage2
+            \end{itemize}
+        \item Line Spacing
+            \begin{itemize}
+                \item setspace
+            \end{itemize}
+    \end{itemize}
+
+    \section*{Numbered Lists}
+    Here is how you create an executable program:
+    \begin{enumerate}
+        \item Write the code.
+        \item The compiler will compile the code for each file.
+        \item The linker will link all the compiled code and create a solution file.
+        \item The solution file be converted into an executable file by the maker.
+    \end{enumerate}
+
+    \section*{Description Lists}
+    Some list related packages can be explained as,
+    \begin{description}
+        \item[paralist] provides compact lists, customizable label and layout options.
+        \item[enumitem] gives control over labels and lengths in all kinds of lists.
+        \item[desclist] offers more flexibility in descriptive lists.
+        \item[multenum] produces vertical enumeration in multiple columns.
+    \end{description}
+
+    \section*{Saving Some Space}
+    Here use the paralist package to provide a more compact view.
+    \begin{compactenum}
+        \item Write the code.
+            \begin{compactitem} % We have compactenum, compactitem, compactdesc
+            \item Your code should not contain any missing semicolons.
+            \item Please write clean code.
+            \end{compactitem}
+        \item The compiler will compile the code.
+            \begin{inparaenum} % We have inparaenum, inparaitem, inparadesc
+            \item Compiler works for each file separately.
+            \item It does not consider incompatibilities between the files.
+            \end{inparaenum}
+        \item The linker will create a solution file.
+            \begin{asparaenum} % We have asparaenum, asparaitem, asparadesc
+            \item But before, it will link all the compiled code.
+            \item We can say that it is connecting the pieces.
+            \end{asparaenum}
+    \end{compactenum}
+
+    \newpage
+
+    \section*{Dimensions of a List}
+    Here we have imported \textbf{layouts} package.
+    \listdiagram
+    You can freely customize all the environment variables.
+    % \setlength{\labelwidth}{2cm}
+
+\end{document}

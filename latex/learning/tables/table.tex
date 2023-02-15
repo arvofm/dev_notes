@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage{parskip}
+\usepackage{array}
+\usepackage{booktabs}               % provides \toprule etc.
+\usepackage{multirow}
+
+\setlength{\extrarowheight}{5pt}    % use with array package
+
+\begin{document}
+
+    First, use tabbing to simulate a table.
+    \begin{tabbing}
+        \emph{Info:} \= Software \= : \= \LaTeX \\
+        \> Author \> : \> Leslie Lamport \\
+        \> Website \> : \> www.latex-project.org
+    \end{tabbing}
+    % \= sets a tab stop
+    % \> goes to the next tab stop
+
+    % \verb|code| typesets code as it is
+    Real tables now.
+
+    \newcommand{\head}[1]{\textnormal{\textbf{#1}}} % lets have head
+    \begin{table}
+    \centering
+    \begin{tabular}{ccc}    % ccc standing for three centered columns
+        \hline              % sep line
+        \head{Name} & \head{Age} & \head{Job} \\      % & is for separating column entries
+        \hline                          % horizontal line
+        Ali & 20 & Student \\    % fuckers what is this
+        \cline{2-3}                     % horizondtal line
+        Daniel & 24 & Programmer \\
+        Ale & 19 & Bass Player \\
+    \end{tabular}
+    \caption{Hello there}
+    \end{table}
+
+    Alignments here.
+
+    \begin{tabular}{|l|c|r|p{2cm}|}     % | stands for vertical line
+        \toprule[1.5pt]
+        \head{left} & \head{centered} & \head{right} & \head{fully justified paragraph cell} \\
+        \midrule
+        l & casd \vline asd & r & p \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+
+    Another example.
+
+    \begin{tabular}{c | p{2cm} | m{2cm} | b{2cm}}
+        \hline
+        baseline & aligned at the top & aligned at the middle & aligned at the bottom \\
+        \hline
+    \end{tabular}
+
+    Another example.
+
+    \begin{tabular}{@{} >{\itshape}l l !{:} l<{.} @{}}
+        \hline
+        \multirow{3}{*}{Info:} & Software & \LaTeX \\       % \multirow{rows}{width(* for auto)}{code}
+        & Author & Miss Leslie \\
+        & Website & www.latex-project.org \\
+        & \multicolumn{2}{c<{.}}{An important person} \\
+        \hline
+    \end{tabular}
+
+    % l         - left
+    % c         - centered
+    % r         - right
+    % p{width}  - paragraph cell
+    % @{code}   - insert code instead of empty space before or after a column
+    % |         - stands for a vertical line
+    % After loading \usepackage{array},
+    % m{width}  - baseline is at the middle
+    % p{width}  - baseline is at top
+    % b{width}  - baseline is at bottom
+    % !{code}   - like @{code}, but the space is not suppressed
+    % >{code}   - inserts code at the beginning of each column, is used before lcrmasdasdad
+    % <{code}   - inserts code at the end of each column, is used before lcrasdasd
+
+
+
+\end{document}

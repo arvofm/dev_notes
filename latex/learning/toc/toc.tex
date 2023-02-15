@@ -1,0 +1,66 @@
+\documentclass[openany]{book}
+
+\usepackage{index}
+\makeindex
+% use makeindex file.idx to generate the index database, then compile
+\usepackage{hyperref}               % this package is best when loaded last
+\hypersetup{pdfauthor={Ali Ucar},
+  pdftitle={Why Learn LaTeX},
+  pdfsubject={You Should Learn LaTeX Immediately},
+  pdfkeywords={latex,learn}}
+% for hyperref:
+% \href{URL}{text} makes text to a hyperlink, which points to the URL address
+% \url{URL} prints the URL and links it
+% \nolinkurl{URL} prints the URL without linking it
+% \hyperlink{name}{text} makes text to a hyperlink, which points to the target name
+
+\begin{document}
+
+    \tableofcontents
+
+    \part{First Part}
+    \index{First Part}
+    \chapter*{Preface}
+    \index{First Part!Preface}
+    Some preface text here.
+    \addcontentsline{toc}{chapter}{Preface}
+    \chapter{First Main Chapter}
+    \index{First Part!First Chapter}
+    \section{First Section of the First Main Chapter}
+    \index{First Part!First Chapter!First Section}
+    This section starts and ends here.
+    \section{Second Section of the First Main Chapter}
+    \index{First Part!First Chapter!Second Section}
+    Second section here, hello there.
+    \subsection{First Subsection of the Second Section Where First Main Chapter Occurs}
+    \index{First Part!First Chapter!Second Section!Subsection}
+    Subsection related thingies in here.
+    \subsubsection[A Deeper Subsection]{Subsection of the subsection where the donkey's pussy got wet.}
+    \index{First Part!First Chapter!Second Section!Subsection!subsubsection}
+    Donkey's pussy got wet hell yeah.
+    \chapter{Second Main Chapter}
+    \index{First Part!Second Chapter}
+    Not a long chapter here.
+
+    \part{Second Part}
+    \index{Second Part}
+    \chapter{Third Main Chapter}
+    \index{Second Part!Third Chapter}
+    Here we have the second part and the third main chapter.
+    \appendix
+    \index{Appendix}
+    \cleardoublepage
+    \addtocontents{toc}{\bigskip}
+    \addcontentsline{toc}{part}{Appendix}
+    \chapter{Chapter Glossary}
+    \index{Appendix!Chapter Glossary}
+    Glossary yeah.
+    \chapter{Symbols}
+    \index{Appendix!Chapter Symbols}
+    Some symbols here.
+
+    \clearpage
+
+    \printindex
+
+\end{document}

@@ -1,0 +1,103 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[T1]{fontenc}    % enhance fonts
+\usepackage[utf8]{inputenc} % special characters are usable now
+\usepackage{microtype}      % provides smooth text appearance and auto hyphenation
+\usepackage{parskip}        % remove auto indentation from paragraph beginnings, use \indent
+
+\begin{document}
+    %% Introduction
+    \title{Hello There!}
+    \author{Ali}
+    \date{\today}
+    \maketitle      % Let there be light
+
+    \section{INTRO TO \LaTeX}
+
+    Hello there!
+    This line doesn't add up, and it has an indentation as a paragrph. \footnote{Don't you darling}
+
+    %%%%%%%%%   SPECIAL CHARACTERS   %%%%%%%%%
+    But this line does. Now let's have some special characters.
+
+    Statement \# 1:
+    50\% of \$100 makes \$50.
+    More special symbols are \&,\_,\{\},[],\textbackslash.
+
+    %%%%%%%%%   TEXT FORMATTING   %%%%%%%%%
+    Time for formatting.
+    This text is \emph{emphasized}.
+    This one is \textit{italic}, and this one is \textbf{bold}.
+    \textsl{Slanted} text, \textsc{small caps} is like this.
+    Such commands can be \textit{\textbf{nested}}.
+    \emph{See what happens when \emph{emphasized} text gets \emph{emphasized again}}. % Only applies to emph
+    By the way, don't forget to follow \texttt{https://github.com}.
+    This is a \textrm{roman} text.
+
+    Font declarations are nice. \sffamily
+    Sans serif font is used. \ttfamily
+    Typewriter is used. \rmfamily
+    Roman font family is used. \sffamily
+    Continuing sans-serif font family.
+    % command           declaration           meaning
+    % \textrm{}         \rmfamily               roman
+    % \textsf{}         \sffamily               sans-serif
+    % \texttt{}         \ttfamily               typewriter
+    % \textbf{}         \bffamily               bold-face
+    % \textmd{}         \mdseries               medium
+    % \textit{}         \itshape                italic
+    % \textsl{}         \slshape                slanted
+    % \textsc{}         \scshape                small caps
+    % \textup{}         \upshape                upright
+    % \textnormal{}     \normalfont             default
+    % \emph{}           \em                     emphasized
+
+    \noindent
+    Now let's explore font sizes.
+
+    \noindent\tiny We \scriptsize start \footnotesize from \small small, \normalsize then get normal, \large big, and \LARGE bigger, \huge huge, and \Huge gigantic!
+    \normalsize
+
+    %%%%%%%%%   COMMANDS AND FUNCTIONS   %%%%%%%%%
+    \noindent Now let's see how we create new functions.
+    % \newcommand{command}[arguments][optional]{definition}
+    \newcommand{\US}{United States}
+    \newcommand{\bi}[1]{\textbf{\textit{#1}}}   % giving arguments
+    \newcommand{\bio}[2][\bfseries]{{#1#2}}     % more arguments, optional parameter
+
+    Now we can use our new command:\US.
+
+    Then there is that \bi{bold and italic thing we created}.
+    This one normally uses \bio{bold text}; on demand, uses \bio[\itshape]{italic text}.
+
+    %%%%%%%%%   PARAGRAPH BOXES   %%%%%%%%%
+    Now we would like to create a narrow text column. % \parbox[alignment]{width}{text}
+    Text line.  % \quad produces some space
+    \quad \parbox[b]{3cm}{this paragraph box is aligned from bottom line.}
+    \quad \parbox{3cm}{I love K-Pop, but I love \TeX\ more.}            % alignment: c: center
+    \quad \parbox[t]{3cm}{this paragraph box is aligned from top line.} % this one better
+
+    This now applies with variables too.
+    \begin{minipage}[t]{3cm}
+        This is some other way of having paragraph boxes.
+    \end{minipage}
+    \\
+    \\
+    \\
+    %%%%%%%%%   SPACING: DOTS   %%%%%%%%%
+    Abbreviations are important, as for Maynard J. Keenan.
+    Here LaTeX understands that this is an abbreviation because a capital has a dot afterwards, so LaTeX puts less spacing for it. \\
+    But sometimes LaTeX does not understand abbreviations, such as etc. so we use etc.\ for abbreviation and\@. For ending the sentence(optional). \\
+    Here are three dots... Yet here are three dots with more spacing\ldots
+    \\
+    \\
+    %%%%%%%%%   DISPAYING QUOTES   %%%%%%%%%
+    I previously said ``I have the high ground''
+
+    \noindent Then Will Ramos said:
+    \begin{quote}
+        After all I have done, I will disappear.
+    \end{quote}
+    These were the actual words that changed my mind.
+
+
+\end{document}
