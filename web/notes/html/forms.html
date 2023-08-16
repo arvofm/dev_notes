@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="be quiet and drive far away">
+    <title>Forms and Inputs</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h3>Here we have some form inputs to fill</h3>
+        <form action="">
+            <label for="name">Who are you?</label>
+            <br>
+            <input type="text" id="name" placeholder="I am the I am.">
+            <!-- type can be: text, email, password, date, radio... -->
+            <br>
+            <br>
+            How are you?
+            <br>
+            Male <input type="radio" name="gender" value="male">
+            <br>
+            Shemale <input type="radio" name="gender" value="shemale">
+            <br>
+            Other <input type="radio" name="gender" value="other">
+            <br>
+            <br>
+            What do you do?
+            <br>
+            Technology <input type="checkbox" name="tech">
+            Art <input type="checkbox" name="art">
+            Smithing <input type="checkbox" name="smiths">
+            <br>
+            <br>
+            How do you live?
+            <br>
+            <select id="degree" name="degree">
+                <option value="novice">Novice</option>
+                <option value="apprentice">Apprentice</option>
+                <option value="journeyman">Journeyman</option>
+                <option value="expert">Expert</option>
+                <option value="master">Master</option>
+            </select>
+            <br>
+            <br>
+            Listen to your heart.
+            <br>
+            <textarea name="message" cols="30" rows="10" placeholder="Bump bump..."></textarea>
+
+            
+            <br> <br> <br>
+            <input type="submit" value="Submit all and send...">
+            <input type="reset" value="Reset" />
+        </form>
+</body>
+</html>
